@@ -90,7 +90,7 @@ public class LoginController {
     private void handleSignIn() {
         String username = usernameTextfield.getText();
         String password = passwordTextField.getText();
-        /*vyresit si sam autentizaci
+        /* todo vyresit si sam autentizaci
         try {
             boolean authenticated = authService.authenticate(username, password);
             if (authenticated) {

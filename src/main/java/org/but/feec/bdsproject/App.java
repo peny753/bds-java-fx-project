@@ -6,9 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/**
- * @author Vldimrir Penaz
- */
+
 public class App extends Application {
 
     private FXMLLoader loader;
@@ -31,6 +29,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception ex) {
+            // TODO: 19.12.2021 exception handler connection
 //            ExceptionHandler.handleException(ex);
         }
     }
