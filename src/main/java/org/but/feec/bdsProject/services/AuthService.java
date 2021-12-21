@@ -1,8 +1,11 @@
-package org.but.feec.bdsproject.services;
+package org.but.feec.bdsProject.services;
 
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import org.but.feec.bdsproject.data.PersonRepository;
+import org.but.feec.bdsProject.api.PersonAuthView;
+import org.but.feec.bdsProject.data.PersonRepository;
+import org.but.feec.bdsProject.exceptions.ResourceNotFoundException;
+
 /**
  * @author Vladimir Penaz
  */
@@ -16,7 +19,7 @@ public class AuthService {
     }
 
     // TODO: 19.12.2021 find out what does it mean
-    /*
+
     private PersonAuthView findPersonByEmail(String email) {
         return personRepository.findPersonByEmail(email);
     }
@@ -33,6 +36,5 @@ public class AuthService {
 
         BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), personAuthView.getPassword());
         return result.verified;
-    }*/
-
+    }
 }

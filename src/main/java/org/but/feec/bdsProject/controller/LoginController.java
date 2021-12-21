@@ -1,28 +1,30 @@
-package org.but.feec.bdsproject.controller;
+package org.but.feec.bdsProject.controller;
 
-/*import org.but.feec.javafx.App;
-import org.but.feec.javafx.data.PersonRepository;
-import org.but.feec.javafx.exceptions.DataAccessException;
-import org.but.feec.javafx.exceptions.ExceptionHandler;
-import org.but.feec.javafx.exceptions.ResourceNotFoundException;
-import org.but.feec.javafx.services.AuthService;*/
 import de.jensd.fx.glyphs.GlyphsDude;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.but.feec.bdsproject.data.PersonRepository;
-import org.but.feec.bdsproject.services.AuthService;
+import org.but.feec.bdsProject.App;
+import org.but.feec.bdsProject.data.PersonRepository;
+import org.but.feec.bdsProject.exceptions.DataAccessException;
+import org.but.feec.bdsProject.exceptions.ExceptionHandler;
+import org.but.feec.bdsProject.exceptions.ResourceNotFoundException;
+import org.but.feec.bdsProject.services.AuthService;
 import org.controlsfx.validation.ValidationSupport;
 import org.controlsfx.validation.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class LoginController {
@@ -52,9 +54,6 @@ public class LoginController {
 
     @FXML
     private void initialize() {
-        GlyphsDude.setIcon(signInButton, FontAwesomeIcon.SIGN_IN, "1em");
-        GlyphsDude.setIcon(usernameLabel, FontAwesomeIcon.USER, "2em");
-        GlyphsDude.setIcon(passwordLabel, FontAwesomeIcon.USER_SECRET, "2em");
         usernameTextfield.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 handleSignIn();
@@ -90,21 +89,24 @@ public class LoginController {
     private void handleSignIn() {
         String username = usernameTextfield.getText();
         String password = passwordTextField.getText();
-        /* todo vyresit si sam autentizaci
+        //todo vyresit si sam autentizaci vymazat vypisy
         try {
             boolean authenticated = authService.authenticate(username, password);
             if (authenticated) {
+                System.out.println("v pohode");
                 showPersonsView();
             } else {
+                System.out.println("blby heslo sefe");
                 showInvalidPaswordDialog();
             }
         } catch (ResourceNotFoundException | DataAccessException e) {
+            System.out.println("nejsi v databazi");
             showInvalidPaswordDialog();
-        } */
+        }
     }
 
     private void showPersonsView() {
-        /*try {
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(App.class.getResource("fxml/Persons.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1050, 600);
@@ -115,13 +117,12 @@ public class LoginController {
             Stage stageOld = (Stage) signInButton.getScene().getWindow();
             stageOld.close();
 
-            stage.getIcons().add(new Image(App.class.getResourceAsStream("logos/vut.jpg")));
             authConfirmDialog();
 
             stage.show();
         } catch (IOException ex) {
-            //ExceptionHandler.handleException(ex);
-        }*/
+            ExceptionHandler.handleException(ex);
+        }
     }
 
     private void showInvalidPaswordDialog() {

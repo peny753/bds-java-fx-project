@@ -1,4 +1,4 @@
-package org.but.feec.bdsproject.config;
+package org.but.feec.bdsProject.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -28,7 +28,7 @@ public class DataSourceConfig {
             properties.load(resourceStream);
 
             config.setJdbcUrl(properties.getProperty("datasource.url"));
-            config.setUsername(properties.getProperty("datasource.username"));/*upravit passwd a username nemi byt hardcoded*/
+            config.setUsername(properties.getProperty("datasource.username"));/* todo upravit passwd a username nemi byt hardcoded*/
             config.setPassword(properties.getProperty("datasource.password")); /*loadujeme z application properties*/
             ds = new HikariDataSource(config);
         } catch (IOException | NullPointerException | IllegalArgumentException e) {

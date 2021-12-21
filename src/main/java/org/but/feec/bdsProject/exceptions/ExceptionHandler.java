@@ -1,8 +1,8 @@
-package org.but.feec.bdsproject.exceptions;
+package org.but.feec.bdsProject.exceptions;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
-import org.but.feec.bdsproject.controller.LoginController;
+import org.but.feec.bdsProject.controller.LoginController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +23,8 @@ public class ExceptionHandler {
         alert.setHeight(700);
         alert.setTitle("Error Dialog");
 
-        TextArea area = new TextArea("Error message: " + ex.getMessage() + System.lineSeparator() + System.lineSeparator() + "The full stack trace:" + System.lineSeparator() + getFullStackTrace(ex));
+        TextArea area = new TextArea("Error message: " + ex.getMessage() + System.lineSeparator() +
+                System.lineSeparator() + "The full stack trace:" + System.lineSeparator() + getFullStackTrace(ex));
         area.setWrapText(true);
         area.setEditable(false);
 

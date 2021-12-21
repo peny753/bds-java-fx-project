@@ -1,10 +1,11 @@
-package org.but.feec.bdsproject;
+package org.but.feec.bdsProject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.but.feec.bdsProject.exceptions.ExceptionHandler;
 
 
 public class App extends Application {
@@ -29,8 +30,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception ex) {
-            // TODO: 19.12.2021 exception handler connection
-//            ExceptionHandler.handleException(ex);
+            ExceptionHandler.handleException(ex);
         }
     }
 

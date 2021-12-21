@@ -1,4 +1,4 @@
-package org.but.feec.bdsproject;
+package org.but.feec.bdsProject;
 
 
 public class Main {

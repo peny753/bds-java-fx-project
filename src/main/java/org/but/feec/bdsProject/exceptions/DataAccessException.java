@@ -1,4 +1,4 @@
-package org.but.feec.bdsproject.exceptions;
+package org.but.feec.bdsProject.exceptions;
 
 
 public class DataAccessException extends RuntimeException {
