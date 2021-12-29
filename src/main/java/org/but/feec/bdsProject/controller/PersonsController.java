@@ -25,7 +25,7 @@ import java.util.List;
 
 
 public class PersonsController {
-    /*
+
 
     private static final Logger logger = LoggerFactory.getLogger(PersonsController.class);
 
@@ -38,13 +38,10 @@ public class PersonsController {
     @FXML
     private TableColumn<PersonBasicView, String> personsCity;
     @FXML
-    private TableColumn<PersonBasicView, String> personsEmail;
-    @FXML
     private TableColumn<PersonBasicView, String> personsFamilyName;
     @FXML
     private TableColumn<PersonBasicView, String> personsGivenName;
-    @FXML
-    private TableColumn<PersonBasicView, String> personsNickname;
+
     @FXML
     private TableView<PersonBasicView> systemPersonsTableView;
 //    @FXML
@@ -60,14 +57,11 @@ public class PersonsController {
     private void initialize() {
         personRepository = new PersonRepository();
         personService = new PersonService(personRepository);
-//        GlyphsDude.setIcon(exitMenuItem, FontAwesomeIcon.CLOSE, "1em");
 
         personsId.setCellValueFactory(new PropertyValueFactory<PersonBasicView, Long>("id"));
         personsCity.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("city"));
-        personsEmail.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("email"));
         personsFamilyName.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("familyName"));
         personsGivenName.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("givenName"));
-        personsNickname.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("nickname"));
 
 
         ObservableList<PersonBasicView> observablePersonsList = initializePersonsData();
@@ -76,7 +70,7 @@ public class PersonsController {
         systemPersonsTableView.getSortOrder().add(personsId);
 
         initializeTableViewSelection();
-        loadIcons();
+
 
         logger.info("PersonsController initialized");
     }
@@ -146,12 +140,6 @@ public class PersonsController {
         return FXCollections.observableArrayList(persons);
     }
 
-    private void loadIcons() {
-        Image vutLogoImage = new Image(App.class.getResourceAsStream("logos/vut-logo-eng.png"));
-        ImageView vutLogo = new ImageView(vutLogoImage);
-        vutLogo.setFitWidth(150);
-        vutLogo.setFitHeight(50);
-    }
 
     public void handleExitMenuItem(ActionEvent event) {
         System.exit(0);
@@ -166,11 +154,6 @@ public class PersonsController {
             stage.setTitle("BDS JavaFX Create Person");
             stage.setScene(scene);
 
-//            Stage stageOld = (Stage) signInButton.getScene().getWindow();
-//            stageOld.close();
-//
-//            stage.getIcons().add(new Image(App.class.getResourceAsStream("logos/vut.jpg")));
-//            authConfirmDialog();
 
             stage.show();
         } catch (IOException ex) {
@@ -183,5 +166,5 @@ public class PersonsController {
         systemPersonsTableView.setItems(observablePersonsList);
         systemPersonsTableView.refresh();
         systemPersonsTableView.sort();
-    } */
+    }
 }

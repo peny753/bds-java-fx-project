@@ -1,7 +1,6 @@
 package org.but.feec.bdsProject.controller;
 
 import de.jensd.fx.glyphs.GlyphsDude;
-//import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -89,18 +88,14 @@ public class LoginController {
     private void handleSignIn() {
         String username = usernameTextfield.getText();
         String password = passwordTextField.getText();
-        //todo vyresit si sam autentizaci vymazat vypisy
         try {
             boolean authenticated = authService.authenticate(username, password);
             if (authenticated) {
-                System.out.println("v pohode");
                 showPersonsView();
             } else {
-                System.out.println("blby heslo sefe");
                 showInvalidPaswordDialog();
             }
         } catch (ResourceNotFoundException | DataAccessException e) {
-            System.out.println("nejsi v databazi");
             showInvalidPaswordDialog();
         }
     }

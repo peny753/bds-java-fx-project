@@ -24,7 +24,7 @@ import java.util.Optional;
  * @author Vladimir Penaz
  */
 public class PersonCreateController {
-    /*
+
 
     private static final Logger logger = LoggerFactory.getLogger(PersonCreateController.class);
 
@@ -69,18 +69,16 @@ public class PersonCreateController {
     @FXML
     void handleCreateNewPerson(ActionEvent event) {
         // can be written easier, its just for better explanation here on so many lines
-        String email = newPersonEmail.getText();
         String firstName = newPersonFirstName.getText();
         String lastName = newPersonLastName.getText();
-        String nickname = newPersonNickname.getText();
+        String birthDate = newPersonNickname.getText();
         String password = newPersonPwd.getText();
 
         PersonCreateView personCreateView = new PersonCreateView();
         personCreateView.setPwd(password.toCharArray());
-        personCreateView.setEmail(email);
-        personCreateView.setFirstName(firstName);
-        personCreateView.setSurname(lastName);
-        personCreateView.setNickname(nickname);
+        personCreateView.setGivenName(firstName);
+        personCreateView.setFamilyName(lastName);
+        personCreateView.setBirthDate(birthDate);
 
         personService.createPerson(personCreateView);
 
@@ -102,7 +100,7 @@ public class PersonCreateController {
         idlestage.setCycleCount(1);
         idlestage.play();
         Optional<ButtonType> result = alert.showAndWait();
-    } */
+    }
 
 }
 

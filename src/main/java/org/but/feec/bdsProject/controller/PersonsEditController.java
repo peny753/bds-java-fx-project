@@ -26,7 +26,7 @@ import java.util.Optional;
  * @author Vladimir Penaz
  */
 public class PersonsEditController {
-    /*
+
 
     private static final Logger logger = LoggerFactory.getLogger(PersonsEditController.class);
 
@@ -72,21 +72,20 @@ public class PersonsEditController {
         loadPersonsData();
 
         logger.info("PersonsEditController initialized");
-    } */
+    }
 
     /**
      * Load passed data from Persons controller. Check this tutorial explaining how to pass the data between controllers: https://dev.to/devtony101/javafx-3-ways-of-passing-information-between-scenes-1bm8
      */
-    /*
+
     private void loadPersonsData() {
         Stage stage = this.stage;
         if (stage.getUserData() instanceof PersonBasicView) {
             PersonBasicView personBasicView = (PersonBasicView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            emailTextField.setText(personBasicView.getEmail());
+            emailTextField.setText(personBasicView.getUsername());
             firstNameTextField.setText(personBasicView.getGivenName());
             lastNameTextField.setText(personBasicView.getFamilyName());
-            nicknameTextField.setText(personBasicView.getNickname());
         }
     }
 
@@ -94,17 +93,15 @@ public class PersonsEditController {
     public void handleEditPersonButton(ActionEvent event) {
         // can be written easier, its just for better explanation here on so many lines
         Long id = Long.valueOf(idTextField.getText());
-        String email = emailTextField.getText();
+        String username = emailTextField.getText();
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
-        String nickname = nicknameTextField.getText();
 
         PersonEditView personEditView = new PersonEditView();
         personEditView.setId(id);
-        personEditView.setEmail(email);
-        personEditView.setFirstName(firstName);
-        personEditView.setSurname(lastName);
-        personEditView.setNickname(nickname);
+        personEditView.setUsername(username);
+        personEditView.setGivenName(firstName);
+        personEditView.setFamilyName(lastName);
 
         personService.editPerson(personEditView);
 
@@ -127,7 +124,7 @@ public class PersonsEditController {
         idlestage.play();
         Optional<ButtonType> result = alert.showAndWait();
     }
-    */
+
 
 }
 

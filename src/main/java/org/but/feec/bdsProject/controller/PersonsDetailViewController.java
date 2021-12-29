@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class PersonsDetailViewController {
 
-    /*
+
     private static final Logger logger = LoggerFactory.getLogger(PersonsDetailViewController.class);
 
     @FXML
@@ -65,15 +65,15 @@ public class PersonsDetailViewController {
         if (stage.getUserData() instanceof PersonDetailView) {
             PersonDetailView personBasicView = (PersonDetailView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            emailTextField.setText(personBasicView.getEmail());
+            emailTextField.setText(personBasicView.getUsername());
             firstNameTextField.setText(personBasicView.getGivenName());
             lastNameTextField.setText(personBasicView.getFamilyName());
-            nicknameTextField.setText(personBasicView.getNickname());
+            nicknameTextField.setText(personBasicView.getBirthDate());
             cityTextField.setText(personBasicView.getCity());
-            houseNumberTextField.setText(personBasicView.gethouseNumber());
+            houseNumberTextField.setText(personBasicView.getHouseNumber());
             streetTextField.setText(personBasicView.getStreet());
         }
-    }*/
+    }
 
 }
 
