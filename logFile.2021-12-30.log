@@ -1,0 +1,169 @@
+402  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+8103 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+412  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+17243 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+24844 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsDetailViewController - PersonsDetailViewController initialized
+417  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+10353 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+49506 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsEditController - PersonsEditController initialized
+373  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+11654 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+19872 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonCreateController - PersonCreateController initialized
+36855 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsDetailViewController - PersonsDetailViewController initialized
+73868 [JavaFX Application Thread] ERROR o.b.f.b.controller.LoginController - 
+file:/E:/BDSM/bds-java-fx-project/target/bds-project-1.0.0.jar!/org/but/feec/bdsProject/fxml/PersonEdit.fxml
+
+javafx.fxml.LoadException: 
+file:/E:/BDSM/bds-java-fx-project/target/bds-project-1.0.0.jar!/org/but/feec/bdsProject/fxml/PersonEdit.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2517)
+	at org.but.feec.bdsProject.controller.PersonsController.lambda$initializeTableViewSelection$0(PersonsController.java:95)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.control.MenuItem.fire(MenuItem.java:459)
+	at com.sun.javafx.scene.control.ContextMenuContent$MenuItemContainer.doSelect(ContextMenuContent.java:1385)
+	at com.sun.javafx.scene.control.ContextMenuContent$MenuItemContainer.lambda$createChildren$12(ContextMenuContent.java:1338)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3856)
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1851)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2584)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:409)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:299)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:447)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:412)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:446)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 44 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Control.getProperties()" because "c" is null
+	at org.controlsfx.validation.ValidationSupport.setRequired(ValidationSupport.java:98)
+	at org.controlsfx.validation.ValidationSupport.registerValidator(ValidationSupport.java:297)
+	at org.controlsfx.validation.ValidationSupport.registerValidator(ValidationSupport.java:328)
+	at org.but.feec.bdsProject.controller.PersonsEditController.initialize(PersonsEditController.java:63)
+	... 55 common frames omitted
+385  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+5831 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+15060 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsDetailViewController - PersonsDetailViewController initialized
+20009 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonCreateController - PersonCreateController initialized
+384  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+16597 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+20766 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonCreateController - PersonCreateController initialized
+395  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+8991 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+386  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+4099 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+9163 [JavaFX Application Thread] ERROR o.b.f.b.controller.LoginController - 
+file:/E:/BDSM/bds-java-fx-project/target/bds-project-1.0.0.jar!/org/but/feec/bdsProject/fxml/PersonEdit.fxml
+
+javafx.fxml.LoadException: 
+file:/E:/BDSM/bds-java-fx-project/target/bds-project-1.0.0.jar!/org/but/feec/bdsProject/fxml/PersonEdit.fxml
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2707)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2677)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548)
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2517)
+	at org.but.feec.bdsProject.controller.PersonsController.lambda$initializeTableViewSelection$0(PersonsController.java:95)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.control.MenuItem.fire(MenuItem.java:459)
+	at com.sun.javafx.scene.control.ContextMenuContent$MenuItemContainer.doSelect(ContextMenuContent.java:1385)
+	at com.sun.javafx.scene.control.ContextMenuContent$MenuItemContainer.lambda$createChildren$12(ContextMenuContent.java:1338)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3856)
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1851)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2584)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:409)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:299)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:447)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:412)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:446)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:556)
+	at com.sun.glass.ui.View.notifyMouse(View.java:942)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:76)
+	at jdk.internal.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:273)
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:83)
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673)
+	... 44 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Control.getProperties()" because "c" is null
+	at org.controlsfx.validation.ValidationSupport.setRequired(ValidationSupport.java:98)
+	at org.controlsfx.validation.ValidationSupport.registerValidator(ValidationSupport.java:297)
+	at org.controlsfx.validation.ValidationSupport.registerValidator(ValidationSupport.java:328)
+	at org.but.feec.bdsProject.controller.PersonsEditController.initialize(PersonsEditController.java:63)
+	... 55 common frames omitted
+14895 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonCreateController - PersonCreateController initialized
+416  [JavaFX Application Thread] INFO  o.b.f.b.controller.LoginController - LoginController initialized
+23699 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonsController - PersonsController initialized
+31917 [JavaFX Application Thread] INFO  o.b.f.b.c.PersonCreateController - PersonCreateController initialized
