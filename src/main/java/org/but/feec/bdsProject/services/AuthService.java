@@ -6,9 +6,6 @@ import org.but.feec.bdsProject.api.PersonAuthView;
 import org.but.feec.bdsProject.data.PersonRepository;
 import org.but.feec.bdsProject.exceptions.ResourceNotFoundException;
 
-/**
- * @author Vladimir Penaz
- */
 
 public class AuthService {
 
@@ -18,7 +15,6 @@ public class AuthService {
         this.personRepository = personRepository;
     }
 
-    // TODO: 19.12.2021 find out what does it mean
 
     private PersonAuthView findPersonByEmail(String email) {
         return personRepository.findPersonByEmail(email);

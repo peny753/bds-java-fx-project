@@ -20,9 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 
-/**
- * @author Vladimir Penaz
- */
+
 public class PersonCreateController {
 
 

@@ -7,7 +7,6 @@ public class PersonCreateView {
 
     private String givenName;
     private String familyName;
-    private String birthDate;
     private char[] pwd;
 
 
@@ -27,13 +26,7 @@ public class PersonCreateView {
         this.familyName = familyName;
     }
 
-    public String getBirthDate() {
-        return birthDate;
-    }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
 
     public char[] getPwd() {
         return pwd;
@@ -48,7 +41,6 @@ public class PersonCreateView {
         return "PersonCreateView{" +
                 "givenName='" + givenName + '\'' +
                 ", familyName='" + familyName + '\'' +
-                ", dateOfBirth='" + birthDate + '\'' +
                 ", pwd=" + Arrays.toString(pwd) +
                 '}';
     }

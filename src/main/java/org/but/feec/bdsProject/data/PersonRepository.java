@@ -52,11 +52,6 @@ public class PersonRepository {
         return null;
     }
 
-    /**
-     * What will happen if we do not use LEFT JOIN? What persons will be returned? Ask your self and repeat JOIN from the presentations
-     *
-     * @return list of persons
-     */
 
     public List<PersonBasicView> getPersonsBasicView() {
         try (Connection connection = DataSourceConfig.getConnection();
@@ -97,7 +92,6 @@ public class PersonRepository {
             throw new DataAccessException("Creating person failed operation on the database failed.");
         }
     }
-
 
 
     public void editPerson(PersonEditView personEditView) {

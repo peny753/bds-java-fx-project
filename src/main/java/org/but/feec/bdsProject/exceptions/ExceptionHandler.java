@@ -30,7 +30,6 @@ public class ExceptionHandler {
 
         alert.getDialogPane().setContent(area);
         alert.setResizable(true);
-        //todo these two alerts had comment (under this statement), why?
         alert.setHeaderText(ex.getMessage());
         alert.setContentText(getFullStackTrace(ex));
         alert.showAndWait();

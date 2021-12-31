@@ -28,8 +28,8 @@ public class DataSourceConfig {
             properties.load(resourceStream);
 
             config.setJdbcUrl(properties.getProperty("datasource.url"));
-            config.setUsername(properties.getProperty("datasource.username"));/* todo upravit passwd a username nemi byt hardcoded*/
-            config.setPassword(properties.getProperty("datasource.password")); /*loadujeme z application properties*/
+            config.setUsername(properties.getProperty("datasource.username"));
+            config.setPassword(properties.getProperty("datasource.password"));
             ds = new HikariDataSource(config);
         } catch (IOException | NullPointerException | IllegalArgumentException e) {
             logger.error("Configuration of the datasource was not successful.", e);
