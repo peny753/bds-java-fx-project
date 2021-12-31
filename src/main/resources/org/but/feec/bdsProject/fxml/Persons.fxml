@@ -58,6 +58,7 @@
                               <TableColumn fx:id="personsId" minWidth="75.0" prefWidth="80.00000303983688" text="id" />
                               <TableColumn fx:id="personsGivenName" minWidth="75.0" prefWidth="120.0" text="given name" />
                               <TableColumn fx:id="personsFamilyName" minWidth="75.0" prefWidth="120.0" text="family name" />
+                              <TableColumn fx:id="personsUsername" minWidth="75.0" prefWidth="120.0" text="username" />
                               <TableColumn fx:id="personsCity" minWidth="75.0" prefWidth="120.0" text="city" />
                           </columns>
                         </TableView>

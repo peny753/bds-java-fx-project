@@ -30,17 +30,15 @@ public class PersonCreateController {
 
     @FXML
     public Button newPersonCreatePerson;
-    @FXML
-    private TextField newPersonEmail;
 
     @FXML
-    private TextField newPersonFirstName;
+    private TextField newPersonGivenName;
 
     @FXML
-    private TextField newPersonLastName;
+    private TextField newPersonFamilyName;
 
     @FXML
-    private TextField newPersonNickname;
+    private TextField newPersonBirthDate;
 
     @FXML
     private TextField newPersonPwd;
@@ -55,10 +53,9 @@ public class PersonCreateController {
         personService = new PersonService(personRepository);
 
         validation = new ValidationSupport();
-        validation.registerValidator(newPersonEmail, Validator.createEmptyValidator("The email must not be empty."));
-        validation.registerValidator(newPersonFirstName, Validator.createEmptyValidator("The first name must not be empty."));
-        validation.registerValidator(newPersonLastName, Validator.createEmptyValidator("The last name must not be empty."));
-        validation.registerValidator(newPersonNickname, Validator.createEmptyValidator("The nickname must not be empty."));
+        validation.registerValidator(newPersonGivenName, Validator.createEmptyValidator("The first name must not be empty."));
+        validation.registerValidator(newPersonFamilyName, Validator.createEmptyValidator("The last name must not be empty."));
+        validation.registerValidator(newPersonBirthDate, Validator.createEmptyValidator("The nickname must not be empty."));
         validation.registerValidator(newPersonPwd, Validator.createEmptyValidator("The password must not be empty."));
 
         newPersonCreatePerson.disableProperty().bind(validation.invalidProperty());
@@ -69,15 +66,15 @@ public class PersonCreateController {
     @FXML
     void handleCreateNewPerson(ActionEvent event) {
         // can be written easier, its just for better explanation here on so many lines
-        String firstName = newPersonFirstName.getText();
-        String lastName = newPersonLastName.getText();
-        String birthDate = newPersonNickname.getText();
+        String givenName = newPersonGivenName.getText();
+        String familyName = newPersonFamilyName.getText();
+        String birthDate = newPersonBirthDate.getText();
         String password = newPersonPwd.getText();
 
         PersonCreateView personCreateView = new PersonCreateView();
         personCreateView.setPwd(password.toCharArray());
-        personCreateView.setGivenName(firstName);
-        personCreateView.setFamilyName(lastName);
+        personCreateView.setGivenName(givenName);
+        personCreateView.setFamilyName(familyName);
         personCreateView.setBirthDate(birthDate);
 
         personService.createPerson(personCreateView);

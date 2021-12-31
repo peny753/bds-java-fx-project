@@ -17,16 +17,16 @@ public class PersonsDetailViewController {
     private TextField idTextField;
 
     @FXML
-    private TextField emailTextField;
+    private TextField usernameTextField;
 
     @FXML
-    private TextField firstNameTextField;
+    private TextField givenNameTextField;
 
     @FXML
-    private TextField lastNameTextField;
+    private TextField familyNameTextField;
 
     @FXML
-    private TextField nicknameTextField;
+    private TextField birthDateTextField;
 
     @FXML
     private TextField cityTextField;
@@ -37,7 +37,7 @@ public class PersonsDetailViewController {
     @FXML
     private TextField streetTextField;
 
-    // used to reference the stage and to get passed data through it
+
     public Stage stage;
 
     public void setStage(Stage stage) {
@@ -47,10 +47,10 @@ public class PersonsDetailViewController {
     @FXML
     public void initialize() {
         idTextField.setEditable(false);
-        emailTextField.setEditable(false);
-        firstNameTextField.setEditable(false);
-        lastNameTextField.setEditable(false);
-        nicknameTextField.setEditable(false);
+        usernameTextField.setEditable(false);
+        givenNameTextField.setEditable(false);
+        familyNameTextField.setEditable(false);
+        birthDateTextField.setEditable(false);
         cityTextField.setEditable(false);
         houseNumberTextField.setEditable(false);
         streetTextField.setEditable(false);
@@ -65,10 +65,10 @@ public class PersonsDetailViewController {
         if (stage.getUserData() instanceof PersonDetailView) {
             PersonDetailView personBasicView = (PersonDetailView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            emailTextField.setText(personBasicView.getUsername());
-            firstNameTextField.setText(personBasicView.getGivenName());
-            lastNameTextField.setText(personBasicView.getFamilyName());
-            nicknameTextField.setText(personBasicView.getBirthDate());
+            usernameTextField.setText(personBasicView.getUsername());
+            givenNameTextField.setText(personBasicView.getGivenName());
+            familyNameTextField.setText(personBasicView.getFamilyName());
+            birthDateTextField.setText(personBasicView.getBirthDate());
             cityTextField.setText(personBasicView.getCity());
             houseNumberTextField.setText(personBasicView.getHouseNumber());
             streetTextField.setText(personBasicView.getStreet());

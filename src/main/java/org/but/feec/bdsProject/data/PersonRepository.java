@@ -36,8 +36,8 @@ public class PersonRepository {
                      "SELECT id_customer, given_name, family_name, username, date_of_birth, city, street, house_number" +
                             " FROM (SELECT c.id_customer, id_address, given_name, family_name, username, date_of_birth" +
                                 " FROM airport_sys.customer c" +
-                                " JOIN airport_sys.customer_has_address a ON c.id_customer = a.id_customer) as ac" +
-                            " JOIN airport_sys.address ad ON ad.id_address = ac.id_address" +
+                                " LEFT JOIN airport_sys.customer_has_address a ON c.id_customer = a.id_customer) as ac" +
+                            " LEFT JOIN airport_sys.address ad ON ad.id_address = ac.id_address" +
                             " WHERE id_customer = ?")
              ) {
             preparedStatement.setLong(1, personId);
@@ -64,8 +64,8 @@ public class PersonRepository {
                      "SELECT id_customer, given_name, family_name, username, city" +
                              " FROM (SELECT c.id_customer, id_address, given_name, family_name, username" +
                              " FROM airport_sys.customer c" +
-                             " JOIN airport_sys.customer_has_address a ON c.id_customer = a.id_customer) as ac" +
-                             " JOIN airport_sys.address ad ON ad.id_address = ac.id_address");
+                             " LEFT JOIN airport_sys.customer_has_address a ON c.id_customer = a.id_customer) as ac" +
+                             " LEFT JOIN airport_sys.address ad ON ad.id_address = ac.id_address");
              ResultSet resultSet = preparedStatement.executeQuery();) {
             List<PersonBasicView> personBasicViews = new ArrayList<>();
             while (resultSet.next()) {
@@ -78,7 +78,7 @@ public class PersonRepository {
     }
 
     public void createPerson(PersonCreateView personCreateView) {
-        String insertPersonSQL = "INSERT INTO airport_sys.customer (given_name, family_name, date_of_birth, pwd) VALUES (?,?,?,?)";
+        String insertPersonSQL = "INSERT INTO airport_sys.customer (given_name, family_name, date_of_birth, pwd) VALUES (?,?,?,?);";
         try (Connection connection = DataSourceConfig.getConnection();
              // would be beneficial if I will return the created entity back
              PreparedStatement preparedStatement = connection.prepareStatement(insertPersonSQL, Statement.RETURN_GENERATED_KEYS)) {
@@ -102,7 +102,7 @@ public class PersonRepository {
 
 
     public void editPerson(PersonEditView personEditView) {
-        String insertPersonSQL = "UPDATE airport_sys.customer p SET username = ?, given_name = ?, family_name = ?, date_of_birth = ? WHERE p.id_customer = ?";
+        String insertPersonSQL = "UPDATE airport_sys.customer p SET username = ?, given_name = ?, family_name = ? WHERE p.id_customer = ?";
         String checkIfExists = "SELECT username FROM airport_sys.customer p WHERE p.id_customer = ?";
         try (Connection connection = DataSourceConfig.getConnection();
              // would be beneficial if I will return the created entity back
@@ -111,12 +111,10 @@ public class PersonRepository {
             preparedStatement.setString(1, personEditView.getUsername());
             preparedStatement.setString(2, personEditView.getGivenName());
             preparedStatement.setString(3, personEditView.getFamilyName());
-            preparedStatement.setString(4, personEditView.getBirthDate());
-            preparedStatement.setLong(5, personEditView.getId());
+            preparedStatement.setLong(4, personEditView.getId());
 
             try {
 
-                // TODO set connection autocommit to false
                 connection.setAutoCommit(false);
 
                 try (PreparedStatement ps = connection.prepareStatement(checkIfExists, Statement.RETURN_GENERATED_KEYS)) {
@@ -132,13 +130,12 @@ public class PersonRepository {
                     throw new DataAccessException("Creating person failed, no rows affected.");
                 }
 
-                // TODO commit the transaction (both queries were performed)
                 connection.commit();
             } catch (SQLException e) {
-                // TODO rollback the transaction if something wrong occurs
+
                 connection.rollback();
             } finally {
-                // TODO set connection autocommit back to true
+
                 connection.setAutoCommit(true);
             }
         } catch (SQLException e) {
@@ -146,12 +143,6 @@ public class PersonRepository {
         }
     }
 
-
-    /**
-     * <p>
-     * Note: In practice reflection or other mapping frameworks can be used (e.g., MapStruct)
-     * </p>
-     */
 
     private PersonAuthView mapToPersonAuth(ResultSet rs) throws SQLException {
         PersonAuthView person = new PersonAuthView();

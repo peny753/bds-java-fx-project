@@ -14,8 +14,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import org.but.feec.bdsProject.services.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +36,8 @@ public class PersonsController {
     @FXML
     private TableColumn<PersonBasicView, String> personsCity;
     @FXML
+    private TableColumn<PersonBasicView, String> personsUsername;
+    @FXML
     private TableColumn<PersonBasicView, String> personsFamilyName;
     @FXML
     private TableColumn<PersonBasicView, String> personsGivenName;
@@ -59,6 +59,7 @@ public class PersonsController {
         personService = new PersonService(personRepository);
 
         personsId.setCellValueFactory(new PropertyValueFactory<PersonBasicView, Long>("id"));
+        personsUsername.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("username"));
         personsCity.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("city"));
         personsFamilyName.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("familyName"));
         personsGivenName.setCellValueFactory(new PropertyValueFactory<PersonBasicView, String>("givenName"));

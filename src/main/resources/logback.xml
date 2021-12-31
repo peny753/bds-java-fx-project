@@ -20,7 +20,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.but.feec.proect"> <!--zmenit podle nazvu-->
+    <logger name="org.but.feec.bdsProject">
         <appender-ref ref="FILE"/>
     </logger>
 

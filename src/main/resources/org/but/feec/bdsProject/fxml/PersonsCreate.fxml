@@ -25,11 +25,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="email">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
             <Label text="first name" GridPane.rowIndex="1">
                <padding>
                   <Insets left="5.0" />
@@ -45,7 +40,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="nickname" GridPane.rowIndex="4">
+            <Label text="birth date" GridPane.rowIndex="4">
                <padding>
                   <Insets left="5.0" />
                </padding>
@@ -54,7 +49,7 @@
             <TextField fx:id="newPersonGivenName" promptText="type new person first name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="newPersonFamilyName" promptText="type new person last name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="newPersonPwd" promptText="type new person password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="newPersonNickname" promptText="type new person nickname" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="newPersonBirthDate" promptText="type new person birth date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <Button fx:id="newPersonCreatePerson" layoutX="501.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleCreateNewPerson" text="create" />

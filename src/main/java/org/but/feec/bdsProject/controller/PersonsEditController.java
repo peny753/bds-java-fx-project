@@ -22,9 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 
-/**
- * @author Vladimir Penaz
- */
+
 public class PersonsEditController {
 
 
@@ -37,9 +35,9 @@ public class PersonsEditController {
     @FXML
     private TextField emailTextField;
     @FXML
-    private TextField firstNameTextField;
+    private TextField givenNameTextField;
     @FXML
-    private TextField lastNameTextField;
+    private TextField familyNameTextField;
     @FXML
     private TextField nicknameTextField;
 
@@ -63,8 +61,8 @@ public class PersonsEditController {
         validation.registerValidator(idTextField, Validator.createEmptyValidator("The id must not be empty."));
         idTextField.setEditable(false);
         validation.registerValidator(emailTextField, Validator.createEmptyValidator("The email must not be empty."));
-        validation.registerValidator(firstNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
-        validation.registerValidator(lastNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
+        validation.registerValidator(givenNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
+        validation.registerValidator(familyNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
         validation.registerValidator(nicknameTextField, Validator.createEmptyValidator("The nickname must not be empty."));
 
         editPersonButton.disableProperty().bind(validation.invalidProperty());
@@ -84,8 +82,8 @@ public class PersonsEditController {
             PersonBasicView personBasicView = (PersonBasicView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
             emailTextField.setText(personBasicView.getUsername());
-            firstNameTextField.setText(personBasicView.getGivenName());
-            lastNameTextField.setText(personBasicView.getFamilyName());
+            givenNameTextField.setText(personBasicView.getGivenName());
+            familyNameTextField.setText(personBasicView.getFamilyName());
         }
     }
 
@@ -94,8 +92,8 @@ public class PersonsEditController {
         // can be written easier, its just for better explanation here on so many lines
         Long id = Long.valueOf(idTextField.getText());
         String username = emailTextField.getText();
-        String firstName = firstNameTextField.getText();
-        String lastName = lastNameTextField.getText();
+        String firstName = givenNameTextField.getText();
+        String lastName = familyNameTextField.getText();
 
         PersonEditView personEditView = new PersonEditView();
         personEditView.setId(id);
