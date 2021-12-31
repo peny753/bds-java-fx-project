@@ -7,6 +7,8 @@ Run project:
 $ java -jar target/bds-project-1.0.0.jar
 
 
+Schema databaze je ulozeno v souboru:
+'final_airport_psg_2.sql'
 
 V rámci tohoto projektu jsem se snažil o vytvoření uživatelského rozhraní pro moji databázi z předchozího projektu. Jedná se o databázi letiště s názvem airport, jež ukládá zákazníky a jejich případné lety ve schématu airport_sys. V tomto rozhraní pracujeme hlavně s tabulkou customers, jež ukládá základní informace o zákaznících a s tabulkou address, v níž jsou uloženy adresy zákazníků. Z těchto dvou tabulek lze pomocí výpisu získat data základní, případně rozšířená (záleží na výběru). Dále je možné upravovat a přidávat další zákazníky do tabulky customers. K databázi se připojujeme přes localhost pomocí role customer s heslem joker. 	
 
