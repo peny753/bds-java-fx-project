@@ -33,13 +33,11 @@ public class PersonsEditController {
     @FXML
     public TextField idTextField;
     @FXML
-    private TextField emailTextField;
-    @FXML
     private TextField givenNameTextField;
     @FXML
     private TextField familyNameTextField;
     @FXML
-    private TextField nicknameTextField;
+    private TextField usernameTextField;
 
     private PersonService personService;
     private PersonRepository personRepository;
@@ -60,10 +58,9 @@ public class PersonsEditController {
         validation = new ValidationSupport();
         validation.registerValidator(idTextField, Validator.createEmptyValidator("The id must not be empty."));
         idTextField.setEditable(false);
-        validation.registerValidator(emailTextField, Validator.createEmptyValidator("The email must not be empty."));
         validation.registerValidator(givenNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
         validation.registerValidator(familyNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
-        validation.registerValidator(nicknameTextField, Validator.createEmptyValidator("The nickname must not be empty."));
+        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The nickname must not be empty."));
 
         editPersonButton.disableProperty().bind(validation.invalidProperty());
 
@@ -81,7 +78,7 @@ public class PersonsEditController {
         if (stage.getUserData() instanceof PersonBasicView) {
             PersonBasicView personBasicView = (PersonBasicView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            emailTextField.setText(personBasicView.getUsername());
+            usernameTextField.setText(personBasicView.getUsername());
             givenNameTextField.setText(personBasicView.getGivenName());
             familyNameTextField.setText(personBasicView.getFamilyName());
         }
@@ -91,7 +88,7 @@ public class PersonsEditController {
     public void handleEditPersonButton(ActionEvent event) {
         // can be written easier, its just for better explanation here on so many lines
         Long id = Long.valueOf(idTextField.getText());
-        String username = emailTextField.getText();
+        String username = usernameTextField.getText();
         String firstName = givenNameTextField.getText();
         String lastName = familyNameTextField.getText();
 

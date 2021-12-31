@@ -127,7 +127,7 @@ public class PersonRepository {
                 int affectedRows = preparedStatement.executeUpdate();
 
                 if (affectedRows == 0) {
-                    throw new DataAccessException("Creating person failed, no rows affected.");
+                    throw new DataAccessException("Editing person failed, no rows affected.");
                 }
 
                 connection.commit();
@@ -139,7 +139,7 @@ public class PersonRepository {
                 connection.setAutoCommit(true);
             }
         } catch (SQLException e) {
-            throw new DataAccessException("Creating person failed operation on the database failed.");
+            throw new DataAccessException("Editing person failed operation on the database failed.");
         }
     }
 
