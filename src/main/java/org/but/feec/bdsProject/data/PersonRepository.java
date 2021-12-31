@@ -78,15 +78,14 @@ public class PersonRepository {
     }
 
     public void createPerson(PersonCreateView personCreateView) {
-        String insertPersonSQL = "INSERT INTO airport_sys.customer (given_name, family_name, date_of_birth, pwd) VALUES (?,?,?,?);";
+        String insertPersonSQL = "INSERT INTO airport_sys.customer (given_name, family_name, pwd) VALUES (?,?,?);";
         try (Connection connection = DataSourceConfig.getConnection();
              // would be beneficial if I will return the created entity back
              PreparedStatement preparedStatement = connection.prepareStatement(insertPersonSQL, Statement.RETURN_GENERATED_KEYS)) {
             // set prepared statement variables
             preparedStatement.setString(1, personCreateView.getGivenName());
             preparedStatement.setString(2, personCreateView.getFamilyName());
-            preparedStatement.setString(3, personCreateView.getBirthDate());
-            preparedStatement.setString(4, String.valueOf(personCreateView.getPwd()));
+            preparedStatement.setString(3, String.valueOf(personCreateView.getPwd()));
 
 
             int affectedRows = preparedStatement.executeUpdate();

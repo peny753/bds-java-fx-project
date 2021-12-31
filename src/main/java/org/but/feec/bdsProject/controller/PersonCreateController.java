@@ -38,9 +38,6 @@ public class PersonCreateController {
     private TextField newPersonFamilyName;
 
     @FXML
-    private TextField newPersonBirthDate;
-
-    @FXML
     private TextField newPersonPwd;
 
     private PersonService personService;
@@ -55,7 +52,6 @@ public class PersonCreateController {
         validation = new ValidationSupport();
         validation.registerValidator(newPersonGivenName, Validator.createEmptyValidator("The first name must not be empty."));
         validation.registerValidator(newPersonFamilyName, Validator.createEmptyValidator("The last name must not be empty."));
-        validation.registerValidator(newPersonBirthDate, Validator.createEmptyValidator("The nickname must not be empty."));
         validation.registerValidator(newPersonPwd, Validator.createEmptyValidator("The password must not be empty."));
 
         newPersonCreatePerson.disableProperty().bind(validation.invalidProperty());
@@ -68,14 +64,12 @@ public class PersonCreateController {
         // can be written easier, its just for better explanation here on so many lines
         String givenName = newPersonGivenName.getText();
         String familyName = newPersonFamilyName.getText();
-        String birthDate = newPersonBirthDate.getText();
         String password = newPersonPwd.getText();
 
         PersonCreateView personCreateView = new PersonCreateView();
         personCreateView.setPwd(password.toCharArray());
         personCreateView.setGivenName(givenName);
         personCreateView.setFamilyName(familyName);
-        personCreateView.setBirthDate(birthDate);
 
         personService.createPerson(personCreateView);
 

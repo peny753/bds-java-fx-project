@@ -40,16 +40,9 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="birth date" GridPane.rowIndex="4">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <TextField fx:id="newPersonEmail" promptText="type new person email" GridPane.columnIndex="1" />
             <TextField fx:id="newPersonGivenName" promptText="type new person first name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="newPersonFamilyName" promptText="type new person last name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="newPersonPwd" promptText="type new person password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="newPersonBirthDate" promptText="type new person birth date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
       <Button fx:id="newPersonCreatePerson" layoutX="501.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleCreateNewPerson" text="create" />
